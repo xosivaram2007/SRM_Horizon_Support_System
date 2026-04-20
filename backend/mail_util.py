@@ -10,9 +10,9 @@ load_dotenv()
 # ============================================================
 
 conf = ConnectionConfig(
-    MAIL_USERNAME=os.getenv("SMTP_USER"),
-    MAIL_PASSWORD=os.getenv("SMTP_PASS", "").replace(" ", ""), # Google app passwords often have spaces
-    MAIL_FROM=os.getenv("SMTP_USER"),
+    MAIL_USERNAME=os.getenv("SMTP_USER", "noreply@srmhorizon.com"),
+    MAIL_PASSWORD=os.getenv("SMTP_PASS", "password").replace(" ", ""), # Google app passwords often have spaces
+    MAIL_FROM=os.getenv("SMTP_USER", "noreply@srmhorizon.com"),
     MAIL_PORT=int(os.getenv("SMTP_PORT", 587)),
     MAIL_SERVER=os.getenv("SMTP_HOST", "smtp.gmail.com"),
     MAIL_STARTTLS=True,
