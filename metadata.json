@@ -1,0 +1,5 @@
+{
+  "name": "SRM UNIVERSITY AP Horizon",
+  "description": "A modern, professional university helpdesk system for SRM UNIVERSITY AP students, faculty, and staff.",
+  "requestFramePermissions": ["microphone", "camera"]
+}

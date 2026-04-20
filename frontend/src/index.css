@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --color-primary: #527490;
+  --color-accent: #f97316;
+  --color-support-green: #10b981;
+  --color-support-blue: #3b82f6;
+  --color-support-lilac: #c084fc;
+  --color-support-silver: #94a3b8;
+  --color-support-yellow: #facc15;
+  --color-support-orange: #f97316;
+}
+
+@layer base {
+  body {
+    @apply font-sans bg-slate-50 text-slate-900 transition-colors duration-300;
+  }
+  
+  .dark body {
+    @apply bg-slate-950 text-slate-100;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border border-white/20 dark:border-slate-800/50 shadow-xl;
+  }
+  
+  .btn-primary {
+    @apply bg-support-blue hover:brightness-90 text-white font-medium py-2 px-4 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg active:scale-95;
+  }
+  
+  .btn-accent {
+    @apply bg-accent hover:bg-orange-600 text-white font-medium py-2 px-4 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg active:scale-95;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-support-blue/20 focus:border-support-blue transition-all dark:text-white;
+  }
+
+  .sidebar-link {
+    @apply flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-support-blue/10 hover:text-support-blue rounded-xl transition-all duration-200;
+  }
+
+  .sidebar-link.active {
+    @apply bg-support-blue text-white shadow-lg shadow-support-blue/30;
+  }
+
+  .stat-card {
+    @apply p-6 rounded-2xl bg-white dark:bg-slate-900 shadow-sm border border-slate-100 dark:border-slate-800 hover:shadow-md transition-all duration-300 hover:-translate-y-1;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-slate-200 dark:bg-slate-800 rounded-full;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    @apply bg-slate-300 dark:bg-slate-700;
+  }
+}
